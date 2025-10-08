@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saint Ann Catholic Church</title>
+  <meta name="description" content="Saint Ann Roman Catholic Church bulletin for October 19, 2025. Single-column, bilingual (English/Español), WCAG 2.2 AA–optimized." />
+  <style>
+    :root{
+      --text: #111;
+      --bg: #fff;
+      --primary: #0b57d0; /* high-contrast link color */
+      /* --accent: #0a7d13;  high-contrast banner color */
+      --banner-text: #ffffff;
+      --muted: #222;
+      --border: #222;
+      --focus: #ffab00;   /* high-visibility focus */
+      --link-visited: #551a8b;
+      --h1: 1.6rem;
+      --h2: 1.4rem;
+      --h3: 1.2rem;
+      --body: 1rem;       /* 16px minimum (>=12pt) */
+      --lead: 1.0625rem;  /* ~17px */
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 400 var(--body)/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .container { max-width: 46rem; margin: 0 auto; padding: 1rem; }
+    a { color: var(--primary); }
+    a:visited { color: var(--link-visited); }
+    a:focus, button:focus, [tabindex]:focus, summary:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .skip-link {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: #000; color: #fff; }
+    header[role="banner"] {
+      background: var(--accent);
+      color: var(--banner-text);
+    }
+    .banner {
+      padding: 1rem 1rem 1.25rem;
+      border-bottom: 4px solid var(--border);
+    }
+    .banner h1 {
+      margin: 0 0 .25rem 0;
+      font-size: var(--h1); /* >= 14pt per request */
+      line-height: 1.3;
+    }
+    .banner p { margin: 0; font-size: var(--lead); }
+    nav[aria-label="Table of contents"] {
+    border-block: 2px solid var(--border);
+    background: #f5f5f5;
+    }
+    nav .container ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0.75rem 1rem;
+      gap: 1.25rem;
+    }
+
+    nav .container li {
+      margin: 0;
+    }
+
+    nav .container a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    nav .container a:hover,
+    nav .container a:focus {
+      text-decoration: underline;
+      color: var(--accent);
+    }
+    /* --- Top navigation bar --- */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--accent);
+  color: var(--banner-text);
+  padding: 0.5rem 1rem;
+  border-bottom: 4px solid var(--border);
+  flex-wrap: wrap;
+}
+
+/* Logo section */
+.nav-bar .logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-bar .logo {
+  height: 48px;
+  width: auto;
+}
+
+/* Navigation menu */
+.nav-bar nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--banner-text);
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-bar nav a:hover,
+.nav-bar nav a:focus {
+  color: var(--focus);
+  text-decoration: underline;
+}
+
+/* Responsive: stack logo & nav vertically on small screens */
+@media (max-width: 640px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-bar nav ul {
+    justify-content: center;
+  }
+}
+
+    main { padding-block: 1rem 2rem; }
+    section { padding-block: 1rem; border-bottom: 1px solid #ddd; }
+    h2 { font-size: var(--h2); margin: 0 0 .5rem 0; }
+    h3 { font-size: var(--h3); margin: 1rem 0 .25rem; }
+    .meta { color: var(--muted); }
+    .badge {
+      background: #111; color: #fff; padding: .125rem .5rem; border-radius: .25rem; font-size: .875rem;
+    }
+    .notice {
+      background: #fff8e1; border: 2px solid #c49000; padding: .75rem; border-radius: .5rem;
+    }
+    .callout {
+      background: #e8f5e9; border: 2px solid #1b5e20; padding: .75rem; border-radius: .5rem;
+    }
+    ul, ol { padding-left: 1.25rem; }
+    .lang { margin-top: .5rem; }
+    .grid { display: grid; gap: .5rem; }
+    .list-col { columns: 2; column-gap: 1.5rem; }
+    @media (max-width: 640px) {
+      .list-2col { columns: 1; }
+    }
+    footer {
+      background: #111; color: #fff; padding: 1rem;
+    }
+    footer a { color: #9ecbff; }
+    /* Link icons for screen-reader context (opens in new tab) */
+    .ext[aria-describedby]::after {
+      content: " ↗";
+    }
+    /* Ensure sufficient spacing for touch targets */
+    a, button, summary { min-height: 44px; display: inline-flex; align-items: center; }
+  </style>
+</head>
+<body>
+  <!-- <a class="skip-link" href="#main">Skip to main content</a> -->
+  <header role="banner">
+    <div class="nav-bar">
+      <a href="https://churchofsaintann.org" class="logo-link" aria-label="Saint Ann Roman Catholic Church — Home">
+      <img src="Saint Ann Logo-1.png" alt="Saint Ann Roman Catholic Church Logo" class="logo" />
+      </a>
+      <nav aria-label="Table of contents">
+        <div class="container">
+          <ul>
+            <li><a href="">Mass Times</a></li>
+            <li><a href="">Calendar/News</a></li>
+            <li><a href="">Kids</a></li>
+            <li><a href="">Get Involve</a></li>
+            <li><a href="">How do I</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="#donations">Donations</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div> 
+      </nav>
+    </div>
+  </header>
+
+  <!-- <main id="main" role="main" class="container">
+
+    <section id="welcome" aria-labelledby="welcome-h2">
+      <h2 id="welcome-h2">Welcome <span class="meta">/ <span lang="es">Bienvenidos</span></span></h2>
+      <p>We’re glad you’re here. Please let us know if we can assist you in any way.</p>
+      <p class="lang" lang="es">Estamos encantados de dar la bienvenida a los nuevos miembros de nuestra comunidad parroquial.
+        Por favor, llamen a la Oficina Parroquial para registrarse.</p>
+      <p class="meta">Parish Office Hours: Mon–Thu 9:00 AM–4:00 PM; Fri 9:00 AM–12:00 PM • Phone: (610) 933‑3732 • Email:
+        <a href="mailto:info@churchofsaintann.org">info@churchofsaintann.org</a></p>
+    </section>
+
+    <section id="mass-times" aria-labelledby="mass-h2">
+      <h2 id="mass-h2">Mass Times & Readings <span class="meta">/ <span lang="es">Horarios & Lecturas</span></span></h2>
+      <div class="callout" role="note" aria-label="Live stream note">
+        <p><strong>Live Stream:</strong> 9:30 AM (English) Mass for homebound parishioners —
+        <a href="https://churchofsaintann.org/live-stream-1">Watch live</a>.</p>
+      </div>
+      <h3>Mass Schedule (Oct 20–26)</h3>
+      <ul>
+        <li>Vigil (Sat): 4:30 PM</li>
+        <li>Sunday: 7:00 AM; <span lang="es">9:30 AM (Bilingüe)</span></li>
+        <li>Weekdays: 8:00 AM (Chapel)</li>
+        <li>Confession (Chapel): Sunday 8:00–8:45 AM</li>
+      </ul>
+
+      <h3>Readings — Thirtieth Sunday in Ordinary Time (Next Sunday)</h3>
+      <ul>
+        <li>1st Reading: Sirach 35:12–14, 16–18</li>
+        <li>Psalm: 34:2–3, 17–18, 19, 23</li>
+        <li>2nd Reading: 2 Timothy 4:6–8, 16–18</li>
+        <li>Gospel: Luke 18:9–14</li>
+      </ul>
+    </section>
+
+    <section id="confirmandi" aria-labelledby="confirmandi-h2">
+      <h2 id="confirmandi-h2">Please Pray for our Confirmandi</h2>
+      <p class="meta">We give thanks for those preparing to receive the Sacrament of Confirmation.</p>
+      <div class="grid">
+        <ul class="list-2col" aria-label="List of Confirmandi">
+          <li>Logan Barone</li><li>Kaitlyn Bell</li><li>Ava Billman</li><li>Oliver Billman</li><li>Ryan Brunner</li>
+          <li>Carter Charpentier</li><li>Taylor Connolly</li><li>Catherine Connolly</li><li>Andrew Cusatis</li><li>Jane Daly</li>
+          <li>Matthew Davidson</li><li>Eden D’Ercole</li><li>Sadie Drayo</li><li>Lauren Fogle</li><li>Kimberly Fromhold</li>
+          <li>Jesús García-López</li><li>Jack George</li><li>Eleanor Grinarml</li><li>Kyle Hartman</li><li>Dorli Icep Fuentes</li>
+          <li>Andri Icep-García</li><li>Matthew Kleponis</li><li>Connor Latrechiano</li><li>Laura Malloy</li><li>Stephanie Martínez</li>
+          <li>Emma Mather</li><li>Colin McGann</li><li>William Miner</li><li>Ronan Munley</li><li>Bianca Nebraska</li>
+          <li>Kaylee Oestreich</li><li>Carter Reilly</li><li>Regan Reilly</li><li>Lucianna Ryan</li><li>Anthony Small</li>
+          <li>Anna Sobjak</li><li>Brigit Stahl</li><li>Jace Thompson</li><li>Amanda Thornton</li><li>Madison Tracey</li>
+          <li>Aiden Tran</li><li>Landon Vacante</li><li>Meghan Van Citters</li><li>Hannah Wallace</li><li>Kate Warman</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="events" aria-labelledby="events-h2">
+      <h2 id="events-h2">Parish Events <span class="meta">/ <span lang="es">Eventos</span></span></h2>
+
+      <article aria-labelledby="missions-h3">
+        <h3 id="missions-h3">World Mission Sunday <span class="meta">/ <span lang="es">Domingo Mundial de Misión</span></span></h3>
+        <p>This weekend we join Catholics worldwide in prayer and generosity for the Missions.
+          Donation envelopes are available in the Chapel. This year’s theme, “Missionaries of Hope Among the People,”
+          reminds us that our prayers and sacrifices bring light to those in darkness.</p>
+        <p lang="es">Este domingo nos unimos a católicos alrededor del mundo en oración y generosidad por las Misiones.
+          Los sobres de donación se encuentran en la Capilla. El tema, “Misioneros de Esperanza Entre los Pueblos,”
+          nos recuerda que nuestras oraciones y sacrificios traen luz a los que están en la oscuridad.</p>
+      </article>
+
+      <article aria-labelledby="rosary-h3">
+        <h3 id="rosary-h3">International Rosary — Sat, Oct 25, 7:00 PM (Chapel)</h3>
+        <p>Join us in honoring Our Lady of Fatima with a Rosary prayed in five languages:
+          English, Spanish, Vietnamese, Tamil, and Polish. We will pray for peace.</p>
+        <p class="lang" lang="es">Acompáñanos a honrar a Nuestra Señora de Fátima con un Rosario en cinco idiomas:
+          Español, Inglés, Tiếng Việt, தமிழ் y polski. Rezaremos por la paz.</p>
+      </article>
+
+      <article aria-labelledby="allsouls-h3">
+        <h3 id="allsouls-h3">All Souls’ Day — Mass & Remembrance</h3>
+        <p><strong>Mass:</strong> Friday, November 7, 6:30 PM (Church). Parishioners may bring a framed photo of a loved one.
+          Photos will be placed on the Minor Altars; please label with your family name. Photos will be returned after Mass.</p>
+        <p>Names of the deceased will be read aloud. Submit a name at
+          <a href="https://churchofsaintann.org/in-remembrance-of-all-souls">In Remembrance of All Souls</a>.</p>
+        <p class="lang" lang="es"><strong>Misa:</strong> Viernes, 7 de noviembre, 6:30 PM (Iglesia).
+          Se pueden traer fotos enmarcadas de sus seres queridos para colocarlas en los Altares Menores.
+          Los nombres de los difuntos se leerán en voz alta. Para enviar un nombre:
+          <a href="https://churchofsaintann.org/in-remembrance-of-all-souls">En memoria de los Fieles Difuntos</a>.</p>
+        <p>Light refreshments in the Church Hall after Mass. We hope to reflect the many cultures that enrich our parish.</p>
+      </article>
+
+      <article aria-labelledby="saint-h3">
+        <h3 id="saint-h3">Saint of the Week — Saint John Paul II (Oct 22)</h3>
+        <p>Patron of World Youth Day. Karol Józef Wojtyła endured many hardships and was deeply formed by
+          his father’s faith and devotion to the Blessed Virgin. Read more at
+          <a href="https://mycatholic.life/saints/saints-of-the-liturgical-year/october-22---st-john-paul-ii-pope/">mycatholic.life</a>.</p>
+      </article>
+
+      <article aria-labelledby="casserole-h3">
+        <h3 id="casserole-h3">Saint John’s Hospice Casserole Program — Wed, Oct 29</h3>
+        <p>Help provide a hot meal to men experiencing homelessness in Philadelphia. Recipes and pans are on the parish office porch.
+        Please deliver <strong>frozen casseroles</strong> to the parish office back porch by <strong>9:00 AM</strong>, Wed, Oct 29.
+        Label the lid with the preparation date and main ingredients.</p>
+        <p class="lang" lang="es">Ayúdenos con una cazuela para hombres sin hogar en Filadelfia. Entregar <strong>cazuelas congeladas</strong>
+        al porche trasero de la oficina parroquial <strong>a las 9:00 AM</strong>, Miércoles 29 de octubre. Indique en la tapa la fecha de preparación
+        y los ingredientes principales.</p>
+      </article>
+
+      <article aria-labelledby="bazaar-h3">
+        <h3 id="bazaar-h3">Christmas Bazaar — Sat, Nov 22, 9:00 AM–2:00 PM (Griffin Hall)</h3>
+        <p>Call for Crafters & Vendors. For information, contact
+           <a href="mailto:musicsinnott@msn.com">Michele Sinnott</a>. Register and view FAQs:</p>
+        <ul>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJYXYNqPBy-aaSpH9Oy40lq5YG3h-VUwykXBfPJyt4DRSg5w/viewform">Registration Form</a></li>
+          <li><a href="https://docs.google.com/document/d/1LDNMYF0fUapeiGI_pNHyJG-2YBjLUiYK/edit">FAQs (Doc)</a></li>
+        </ul>
+        <p class="lang" lang="es"><strong>Bazar Navideño:</strong> Llamado a artesanos y vendedores. Registro y preguntas frecuentes:</p>
+        <ul>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSekrljSnco2d5BC9Z76nfLfJooRXjtewNtTohKojAzaQ0UenQ/viewform">Formulario de inscripción</a></li>
+          <li><a href="https://docs.google.com/document/d/1Xtn6HuBhND7t_J_C4Rc5Cd6AbUFQXi0q7I0Rp7dSd_8/edit">Preguntas frecuentes (Doc)</a></li>
+        </ul>
+      </article>
+
+      <article aria-labelledby="raffle-h3">
+        <h3 id="raffle-h3">Saint Ann Parish Raffle</h3>
+        <p>Raffle Tickets ($25) available after the 9:30 AM Combined Mass. Proceeds support
+          the Our Lady of Guadalupe celebration. Details:
+          <a href="https://churchofsaintann.org/our-lady-of-guadalupe-tilma-presentation">Our Lady of Guadalupe — Tilma Presentation</a>.</p>
+        <p class="lang" lang="es">Boletos de la rifa ($25) después de la Misa combinada de las 9:30 AM.
+          A beneficio de la Celebración de Nuestra Señora de Guadalupe.</p>
+      </article>
+
+      <article aria-labelledby="farewell-h3">
+        <h3 id="farewell-h3">Farewell Gathering — Sun, Oct 19 (after 9:30 AM Mass, Church Hall)</h3>
+        <p>Join us to celebrate and thank <strong>Julie Prichett</strong> for her many years of service as Director of Religious Education.
+          Enjoy refreshments and share your stories.</p>
+        <p class="lang" lang="es">Acompáñanos para agradecer a <strong>Julie Prichett</strong> por sus años de servicio como Directora Religiosa.</p>
+      </article>
+
+      <article aria-labelledby="gamenight-h3">
+        <h3 id="gamenight-h3">Young Adults Game Night — Sun, Oct 19, 3–5 PM (Parish Hall)</h3>
+        <p>Games geared toward adults 18+. A relaxed way to connect and build community.</p>
+      </article>
+
+      <article aria-labelledby="hfs-h3">
+        <h3 id="hfs-h3">Support Holy Family School — Pies & Poinsettias</h3>
+        <p><strong>Order deadline:</strong> Fri, Nov 17 • <strong>Pickup:</strong> Tue, Nov 25, 2:30–5 PM (Griffin Hall).
+        To order, email <a href="mailto:awhiteman@myholyfamilyschool.org">awhiteman@myholyfamilyschool.org</a>.</p>
+        <p class="lang" lang="es"><strong>Ordene antes del:</strong> Vie, 17 de noviembre • <strong>Recoja:</strong> Mar, 25 de noviembre,
+        2:30–5 PM (Griffin Hall). Para ordenar, escriba a
+        <a href="mailto:awhiteman@myholyfamilyschool.org">awhiteman@myholyfamilyschool.org</a>.</p>
+      </article>
+    </section>
+
+    <section id="lamps" aria-labelledby="lamps-h2">
+      <h2 id="lamps-h2">Sanctuary & Votive Lamps <span class="meta">/ <span lang="es">Lámparas</span></span></h2>
+      <p>Request a lamp intention online:
+        <a href="https://churchofsaintann.org/sanctuary-votive-lamps">Sanctuary &amp; Votive Lamps</a>.
+        Sanctuary $30 • Saint Votives $15.</p>
+      <p class="lang" lang="es">Solicite una intención de lámpara en línea:
+        <a href="https://churchofsaintann.org/sanctuary-votive-lamps">Lámparas del Santuario y Votivas</a>.
+        Santuario $30 • Votiva $15.</p>
+      <div class="notice" role="note" aria-label="Example intentions">
+        <p><strong>Example Intentions (This Week):</strong></p>
+        <ul>
+          <li>Chapel Sanctuary Lamp — God’s Protection for the Helpless (Requested by Anonymous)</li>
+          <li>Saint Mary, Most Blessed Mother — Niki Sam Kyra (Requested by Anonymous)</li>
+          <li>Saint Joseph, Most Chaste Spouse — Healing for Tom Watson (Requested by Glenn B.)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ministries" aria-labelledby="ministries-h2">
+      <h2 id="ministries-h2">Community & Ministries <span class="meta">/ <span lang="es">Comunidad</span></span></h2>
+      <article aria-labelledby="hope-h3">
+        <h3 id="hope-h3">HOPE Transport Ministry</h3>
+        <p>Provides essential rides to members of Saint Ann and Saint Mary. Please schedule rides four (4) days in advance.
+           To volunteer, call Michelle Giffroy‑Rossi: (610) 283‑1515.</p>
+        <p class="lang" lang="es">Provee viajes esenciales a los miembros de Santa Ana y Santa María.
+           Solicite con cuatro (4) días de anticipación.</p>
+      </article>
+      <article aria-labelledby="sick-h3">
+        <h3 id="sick-h3">Please Pray for the Sick</h3>
+        <p>Names remain on the list for three months. To extend, please call the parish office.
+           (Sample of current names shown here for layout only.)</p>
+        <ul class="list-2col" aria-label="Sample list of names">
+          <li>Ellen Garvin*</li><li>Jennifer Budnick*</li><li>Marie Frederick*</li><li>Elwood Frederick*</li>
+          <li>Patty Quinn</li><li>Francis Otto</li><li>Joane Kennedy</li><li>Cindy Patton</li>
+          <li>Patti Moyer</li><li>Michael Englisch</li><li>Joe Englisch</li><li>Jacob West</li>
+          <li>Steven Griboski</li><li>Dorothy Faulkner</li><li>Tom Watson</li><li>Bernice April</li>
+          <li>Liuda Shtohryn</li>
+        </ul>
+        <p class="meta">* Please call the office to remain on the list.</p>
+      </article>
+    </section>
+
+    <section id="donations" aria-labelledby="donations-h2">
+      <h2 id="donations-h2">Donations <span class="meta">/ <span lang="es">Donaciones</span></span></h2>
+      <p>Your generosity sustains our mission and maintains our facilities. Thank you!</p>
+      <p><a href="https://churchofsaintann.org/donations">Give online at churchofsaintann.org/donations</a>.
+         If you give by card, please verify your recurring donation and keep your card expiration date updated.</p>
+      <p class="lang" lang="es">Gracias por su generosidad. Para donar en línea:
+         <a href="https://churchofsaintann.org/donations">churchofsaintann.org/donations</a>.</p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h2">
+      <h2 id="contact-h2">Contact</h2>
+      <address>
+        Saint Ann Roman Catholic Church • 502 S. Main Street, Phoenixville, PA 19460<br />
+        Phone: <a href="tel:+16109333732">(610) 933‑3732</a> • Email: <a href="mailto:info@churchofsaintann.org">info@churchofsaintann.org</a><br />
+        Website: <a href="https://churchofsaintann.org">churchofsaintann.org</a>
+      </address>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© 2025 Saint Ann Roman Catholic Church. This bulletin is built to meet WCAG 2.2 AA guidelines (single‑column layout,
+        language tags for Español, high‑contrast palette, descriptive links, larger text, and logical reading order).</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>-->
+</body>
+</html> 
