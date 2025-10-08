@@ -1,0 +1,151 @@
+:root{
+  --text: #111;
+  --bg: #fff;
+  --primary: #0b57d0;
+  --accent:  #ffffff;            /* light bar background so text is dark */
+  --border: #222;
+  --focus: #ffab00;
+  --link-visited: #551a8b;
+  --h1: 1.6rem;
+  --h2: 1.4rem;
+  --h3: 1.2rem;
+  --body: 1rem;
+  --lead: 1.0625rem;
+}
+
+/* Base */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font: 400 var(--body)/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--primary); }
+a:visited { color: var(--link-visited); }
+a:focus, button:focus, [tabindex]:focus, summary:focus {
+  outline: 3px solid var(--focus); outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: #000; color: #fff; }
+
+/* Top navigation bar */
+.nav-bar {
+  background: var(--accent);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo { height: 48px; width: auto; }
+
+/* Nav list */
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0 0 0 auto;  /* push nav to the right of the logo */
+  padding: 0;
+}
+.nav-list a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text);       /* DARK TEXT (not white) */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-list a:hover,
+.nav-list a:focus {
+  text-decoration: underline;
+}
+
+
+/* --- Dropdown menu --- */
+.nav-list li {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;           /* below the parent link */
+  left: 0;
+  background: #ffffff; /* white dropdown background */
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  color: #111;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+  background-color: #f0f0f0;
+  text-decoration: underline;
+}
+
+/* Show menu on hover or focus */
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu {
+  display: block;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-list {
+    margin: 0;
+    justify-content: center;
+  }
+}
+
+/* Optional: make the bar sticky*/
+.nav-bar { position: sticky; top: 0; z-index: 1000; }
+*/
+/* Works with your current markup, no class needed */
+.nav-bar nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar nav a { color: #111; font-weight: 600; text-decoration: none; }
+.nav-bar nav a:hover, .nav-bar nav a:focus { text-decoration: underline; }
