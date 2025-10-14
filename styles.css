@@ -22,6 +22,7 @@ body {
   background: var(--bg);
 }
 
+
 a { color: var(--primary); }
 a:visited { color: var(--link-visited); }
 a:focus, button:focus, [tabindex]:focus, summary:focus {
@@ -36,15 +37,28 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
 
 /* Top navigation bar */
 .nav-bar {
-  background: var(--accent);
+  width: 100vw;          /* use full viewport width */
+  left: 0;
+  right: 0;
+  margin: 0;
+  background: #ffffff;   /* or your accent color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
 .nav-inner {
+  display: flex;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0.5rem 1rem;
-  display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  justify-content: space-between;
 }
 
 /* Logo section */
@@ -52,12 +66,18 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
   display: flex;
   align-items: center;
   text-decoration: none;
-  gap: 0.5rem; /* space between image and text */
+  gap: 0.5rem;
+  position: absolute;
+  left: 0;
+  padding-left: 1rem; /* small breathing space */
 }
 
 .logo {
-  height: auto;
+  height: 100px;
   width: auto;
+  float: left;
+  margin-top: 50px;
+  position:relative;
 }
 
 .logo-text {
@@ -71,8 +91,11 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
-  margin: 0 0 0 auto;  /* push nav to the right of the logo */
+  gap: 6.25rem;
+  justify-content: space-evenly;  /* push nav to the right of the logo */
+  align-items: center;
+  margin:0;
+  width: 100%;
   padding: 0;
 }
 .nav-list a {
@@ -148,7 +171,11 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
 }
 
 /* Optional: make the bar sticky*/
-.nav-bar { position: sticky; top: 0; z-index: 1000; }
+.nav-bar { 
+  position: sticky; 
+  top: 24px; z-index: 1000;
+  margin-bottom: 2.5rem;
+  }
 */
 /* Works with your current markup, no class needed */
 .nav-bar nav ul {
@@ -161,3 +188,101 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
 }
 .nav-bar nav a { color: #111; font-weight: 600; text-decoration: none; }
 .nav-bar nav a:hover, .nav-bar nav a:focus { text-decoration: underline; }
+
+/*The header section*/
+.masstime::before {
+  content: "⛪";        /* symbol + space */
+  color: #0b57d0;       /* optional color */
+  font-weight: 700;
+  font-size: 1.5rem;    /* adjust size to match heading */
+
+}
+.masstime {
+  margin-left: 20px;
+  font-size: 2rem;        /* larger title */
+  font-weight: 700;
+}
+
+/* footer part */
+.footer {
+  position:relative;
+  display: flex;
+  flex-wrap: wrap;           /* mobile responsive */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-top: 1px solid #ccc;
+  height:auto;
+  margin-bottom: 0px;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1 1 45%;             /* both sides take ~half width on large screens */
+  box-sizing: border-box;
+}
+
+.map-and-info {
+  display: flex;
+  align-items: center;          /* vertically centers text next to map */
+  gap: 2rem;                    /* space between map and text */
+}
+.map-and-info iframe {
+  width: 25%;
+  height: 75%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.location-text {
+  font-size: 0.95rem;
+  color: #111;
+  line-height: 1.4;
+}
+
+.location-text a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+.location-text a:hover {
+  text-decoration: underline;
+}
+.location-text a:visited{
+  color:#551a8b;
+}
+
+
+
+/* footer right */
+.footer-right {
+  padding-left: 2rem;
+}
+
+.footer-right h3 {
+  margin-top: 0;
+  color: #0b57d0;            /* match your brand color */
+}
+
+.footer-right a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+.footer-right a:visited{
+  color:#551a8b;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer-right {
+    padding-left: 0;
+    margin-top: 1.5rem;
+  }
+}
