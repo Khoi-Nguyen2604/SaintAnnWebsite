@@ -55,7 +55,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer footer-fixed">
     <div class="footer-left">
       <!-- Google Map Embed -->
       <div class="map-and-info"> 
@@ -63,9 +63,11 @@
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.6756693768543!2d-75.51701862350366!3d40.127230773207735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c691f7850fb56d%3A0xe963c11c5488a1ce!2sSt%20Ann&#39;s%20Catholic%20Church!5e0!3m2!1sen!2sus!4v1760466322854!5m2!1sen!2sus" 
           width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="location-text">
-          <p>Saint Ann Parish<br>
-          <a href="https://maps.app.goo.gl/CssUZL9MgQM8hEjs6" target="_blank">[name of the street]<br>
-          Phoenixville,PA</a> </p>
+          <h3>Saint Ann Parish</h3>
+          <p>
+            <a href="https://maps.app.goo.gl/CssUZL9MgQM8hEjs6" target="_blank">[502 Main St, Phoenixville, PA 19460]<br>
+            Phoenixville, PA</a>
+          </p>
         </div>
       </div>
     </div>
@@ -76,5 +78,26 @@
       <strong>Email:</strong> <a href="mailto:info@saintannparish.org">info@saintannparish.org</a></p>
     </div>
   </footer>
+  <script>
+    // If a footer has .footer-fixed, compute its height and add .use-fixed-footer to body
+    (function(){
+      var footer = document.querySelector('.footer.footer-fixed');
+      if (!footer) return;
+      function update(){
+        var h = Math.ceil(footer.getBoundingClientRect().height);
+        // set CSS var on root and ensure body has padding helper class
+        document.documentElement.style.setProperty('--footer-height', h + 'px');
+        document.body.classList.add('use-fixed-footer');
+      }
+      update();
+      if (window.ResizeObserver) {
+        var ro = new ResizeObserver(update);
+        ro.observe(footer);
+      } else {
+        window.addEventListener('resize', update);
+        window.addEventListener('load', update);
+      }
+    })();
+  </script>
 </body>
 </html>

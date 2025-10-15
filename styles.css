@@ -203,6 +203,7 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
   font-weight: 700;
 }
 
+
 /* footer part */
 .footer {
   position:relative;
@@ -217,6 +218,27 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
   margin-bottom: 0px;
 }
 
+/* Optional: make the footer always visible (fixed to viewport bottom).
+   Use by adding `class="footer footer-fixed"` on the footer element.
+   It is intentionally opt-in so you can revert easily. */
+.footer-fixed {
+  --footer-height: 88px; /* default height, override if you change padding */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: 1rem 2rem; /* slightly smaller padding for fixed footer */
+  display: flex;
+  align-items: center;
+}
+
+/* Helper class to add bottom padding equal to the footer height so content isn't covered.
+   Add `class="use-fixed-footer"` to the <body> tag when using .footer-fixed. */
+.use-fixed-footer {
+  padding-bottom: var(--footer-height, 88px);
+}
+
 .footer-left,
 .footer-right {
   flex: 1 1 45%;             /* both sides take ~half width on large screens */
@@ -225,7 +247,7 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
 
 .map-and-info {
   display: flex;
-  align-items: center;          /* vertically centers text next to map */
+  align-items: flex-start;      /* align text to the top of the map */
   gap: 2rem;                    /* space between map and text */
 }
 .map-and-info iframe {
@@ -239,6 +261,13 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
   color: #111;
   line-height: 1.4;
 }
+
+.location-text h3 {
+  margin: 0 0 0.5rem 0;
+  color: #0b57d0; /* match contact heading */
+  font-size: 1.125rem;
+}
+
 
 .location-text a {
   color: #0b57d0;
@@ -285,4 +314,5 @@ a:focus, button:focus, [tabindex]:focus, summary:focus {
     padding-left: 0;
     margin-top: 1.5rem;
   }
+  .info-columns { flex-direction: column; gap: 1rem; }
 }
