@@ -11,7 +11,7 @@
 
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Saint Ann Church home">
+      <a class="brand" href="#home" data-route="home" aria-label="Saint Ann Church home" >
         <img src="./assets/Saint Ann Logo-1.png" class="brand-logo" alt="Saint Ann Parish logo" />
         <span class="brand-text"><span>Saint Ann</span><span>Church</span></span>
       </a>
@@ -24,15 +24,15 @@
 
       <nav class="site-nav" aria-label="Primary">
         <ul class="nav-list">
-          <li><a href="#news">News</a></li>
-          <li><a href="#calendar">Calendar</a></li>
-          <li><a href="#get-involved">Get Involved</a></li>
+          <li><a href="#news" data-route="news">News</a></li>
+          <li><a href="#calendar" data-route="calendar">Calendar</a></li>
+          <li><a href="#get-involved" data-route="get involved">Get Involved</a></li>
           <li class="dropdown">
             <a href="#how-do-i">How do I ...</a>
             <ul class="dropdown-menu">
-              <li><a href="#become-catholic">Become Catholic</a></li>
-              <li><a href="#baptism">Baptize my kid</a></li>
-              <li><a href="#donate">Donate</a></li>
+              <li><a href="#become-catholic" data-route="How do I become a catholic?">Become Catholic</a></li>
+              <li><a href="#baptism" data-route="How do I baptize my kid?">Baptize my kid</a></li>
+              <li><a href="#donate" data-route="How do I donate?">Donate</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -51,12 +51,7 @@
   </header>
 
   <main id="main" class="site-main" role="main">
-    <div class="container">
-      <h1 class="page-title">⛪ Mass Times</h1>
-      <ol class="instructions">
-        <li>Enter the mass time here</li>
-      </ol>
-    </div>
+    <div><p>This is the placeholder</p></div>
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -79,10 +74,11 @@
 
       <section aria-labelledby="contact-title" class="contact">
         <h2 id="contact-title">Contact Us</h2>
-        <p><strong>Phone:</strong> <span>(555) 123-4567</span></p>
+        <p><strong>Phone:</strong> <a href="tel:+1555123456789"><span>(555) 123-4567</span></a></p>
         <p><strong>Email:</strong> <a href="mailto:info@saintannparish.org">info@saintannparish.org</a></p>
       </section>
     </div>
   </footer>
+  <script src ="./scripts/temp.js"></script>
 </body>
 </html>
