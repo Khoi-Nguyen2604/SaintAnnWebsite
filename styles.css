@@ -1,318 +1,189 @@
 :root{
-  --text: #111;
-  --bg: #fff;
-  --primary: #0b57d0;
-  --accent:  #ffffff;            /* light bar background so text is dark */
-  --border: #222;
-  --focus: #ffab00;
-  --link-visited: #551a8b;
-  --h1: 1.6rem;
-  --h2: 1.4rem;
-  --h3: 1.2rem;
-  --body: 1rem;
-  --lead: 1.0625rem;
+  --text:#111;
+  --bg:#fff;
+  --primary:#0b57d0;
+  --accent:#f6f7fb;
+  --border:#e5e7eb;
+  --focus:#ffab00;
+  --h1:clamp(1.6rem,3vw,2rem);
+  --body:1rem;
 }
 
-/* Base */
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font: 400 var(--body)/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-}
-
-
-a { color: var(--primary); }
-a:visited { color: var(--link-visited); }
-a:focus, button:focus, [tabindex]:focus, summary:focus {
-  outline: 3px solid var(--focus); outline-offset: 2px;
-}
-
-/* Skip link */
-.skip-link {
-  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
-}
-.skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: #000; color: #fff; }
-
-/* Top navigation bar */
-.nav-bar {
-  width: 100vw;          /* use full viewport width */
-  left: 0;
-  right: 0;
-  margin: 0;
-  background: #ffffff;   /* or your accent color */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-inner {
-  display: flex;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: space-between;
-}
-
-/* Logo section */
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  gap: 0.5rem;
-  position: absolute;
-  left: 0;
-  padding-left: 1rem; /* small breathing space */
-}
-
-.logo {
-  height: 100px;
-  width: auto;
-  float: left;
-  margin-top: 50px;
-  position:relative;
-}
-
-.logo-text {
-  font-size: 2.25rem;   /* ~20px, readable but not oversized */
-  font-weight: 700;
-  color: #111;          /* dark text */
-  line-height: 1;
-}
-/* Nav list */
-.nav-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6.25rem;
-  justify-content: space-evenly;  /* push nav to the right of the logo */
-  align-items: center;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
   margin:0;
-  width: 100%;
-  padding: 0;
-}
-.nav-list a {
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--text);       /* DARK TEXT (not white) */
-  font-size: 1.525rem;
-  min-height: 40px;
-  display: inline-flex;
-  align-items: center;
-}
-.nav-list a:hover,
-.nav-list a:focus {
-  text-decoration: underline;
+  font:400 var(--body)/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:var(--bg);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
-
-/* --- Dropdown menu --- */
-.nav-list li {
-  position: relative;
+.container{
+    width: min(1400px, 96vw);
+    margin-inline: auto;
+    padding-inline: 1rem;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;           /* below the parent link */
-  left: 0;
-  background: #ffffff; /* white dropdown background */
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  padding: 0.5rem 0;
-  list-style: none;
-  min-width: 180px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-}
+/* a11y */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:var(--primary);color:#fff;padding:.5rem .75rem;border-radius:.5rem}
 
-.dropdown-menu li {
-  margin: 0;
+/* Header */
+.site-header{
+    background:var(--bg);
+    /* border removed */
 }
-
-.dropdown-menu a {
-  color: #111;
-  text-decoration: none;
-  display: block;
-  padding: 0.5rem 1rem;
-  font-weight: 500;
-  white-space: nowrap;
+.header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:3rem; /* increased gap between logo and navigation */
+    padding-block:1rem;
 }
-
-.dropdown-menu a:hover,
-.dropdown-menu a:focus {
-  background-color: #f0f0f0;
-  text-decoration: underline;
+.brand{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit;flex-shrink:0}
+.brand-logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-top: 10px; /* give some space from top */
 }
-
-/* Show menu on hover or focus */
-.dropdown:hover > .dropdown-menu,
-.dropdown:focus-within > .dropdown-menu {
-  display: block;
-}
-
-/* Responsive: stack on small screens */
-@media (max-width: 640px) {
-  .nav-inner {
+.brand-text{
+    font-weight:700;
+    font-size:2.25rem;
+    color: var(--text);
+    display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  .nav-list {
+    line-height: 1.1;
+}
+
+.nav-toggle{display:none}
+.hamburger{display:none;cursor:pointer;padding:.5rem;margin-left:auto}
+.hamburger span{display:block;height:2px;width:22px;background:var(--text);margin:5px 0;transition:transform .2s ease}
+
+/* Navigation */
+.site-nav{
+    flex: 1;
+    margin-left: auto;
+    padding-right: 2rem;
+    width: 70%; /* take more space for better distribution */
+}
+.nav-list{
+    display: flex;
+    justify-content: space-between; /* distribute items evenly */
+    list-style: none;
+    padding: 0;
     margin: 0;
-    justify-content: center;
+    position: relative; /* for dropdowns */
+    width: 100%; /* use full width of nav container */
+}
+.site-nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  font-size: 1.525rem;  /* matched to screenshot */
+  padding:.5rem;
+  display:block;
+}
+.site-nav a:hover,.site-nav a:focus{color:var(--primary);text-decoration:underline}
+.site-nav a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* Dropdown menus */
+.dropdown{position:relative}
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:0.5rem;
+  padding:0.5rem;
+  min-width:200px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  z-index:100;
+}
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu{
+  display:block;
+}
+.dropdown-menu li{
+  list-style:none;
+}
+.dropdown-menu a{
+  padding:0.5rem 1rem;
+  white-space:nowrap;
+  font-size: 1.4rem;  /* slightly smaller than main nav */
+  font-weight: 500;   /* slightly lighter than main nav */
+}
+.dropdown-menu a:hover{
+  background:var(--accent);
+  border-radius:0.25rem;
+}
+
+/* Main */
+.site-main{flex:1;padding:1.25rem 0 2rem}
+.page-title{
+    font-size:2rem;        /* larger title size */
+    margin:1rem 0;
+    font-weight:700;
+}
+.instructions{margin-top:.25rem}
+
+/* Footer (left: map+address; right: contact) */
+.site-footer{background:var(--accent);border-top:1px solid var(--border);padding:1.2rem 0}
+.footer-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem}
+.map-wrap{display:flex;align-items:flex-start;gap:1rem;flex:1 1 55%;min-width:320px}
+.map-embed{width:200px;height:150px;border:1px solid var(--border);border-radius:.5rem;overflow:hidden;flex-shrink:0;background:#fff}
+.map-embed iframe{width:100%;height:100%;border:0;display:block}
+.church-address{font-style:normal;line-height:1.4}
+.contact{flex:1 1 30%;min-width:250px}
+.map-wrap h2,
+.contact h2 {
+    color: var(--primary);
+    font-size: 1.525rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+.contact p{margin:.25rem 0}
+
+/* Responsive */
+@media (max-width: 920px){
+  .brand-text{display:none} /* keep logo only to save space */
+}
+@media (max-width: 760px){
+  .hamburger{display:block}
+  .site-nav{width:100%;order:3} /* drop nav below header row */
+  .nav-list{
+    display:none;
+    flex-direction:column;
+    gap:.5rem;
+    padding:.75rem 0;
+    border-top:1px solid var(--border);
+  }
+  .nav-toggle:checked ~ .site-nav .nav-list{display:flex}
+  
+  /* Mobile dropdown adjustments */
+  .dropdown-menu{
+    position:static;
+    transform:none;
+    box-shadow:none;
+    border:none;
+    background:transparent;
+    padding-left:1rem;
+    min-width:0;
+  }
+  .dropdown-menu a{
+    padding:0.5rem 1rem;
+    font-size:0.95em;
   }
 }
-
-/* Optional: make the bar sticky*/
-.nav-bar { 
-  position: sticky; 
-  top: 24px; z-index: 1000;
-  margin-bottom: 2.5rem;
-  }
-*/
-/* Works with your current markup, no class needed */
-.nav-bar nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-}
-.nav-bar nav a { color: #111; font-weight: 600; text-decoration: none; }
-.nav-bar nav a:hover, .nav-bar nav a:focus { text-decoration: underline; }
-
-/*The header section*/
-.masstime::before {
-  content: "⛪";        /* symbol + space */
-  color: #0b57d0;       /* optional color */
-  font-weight: 700;
-  font-size: 1.5rem;    /* adjust size to match heading */
-
-}
-.masstime {
-  margin-left: 20px;
-  font-size: 2rem;        /* larger title */
-  font-weight: 700;
-}
-
-
-/* footer part */
-.footer {
-  position:relative;
-  display: flex;
-  flex-wrap: wrap;           /* mobile responsive */
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2rem;
-  background-color: #f4f4f4;
-  border-top: 1px solid #ccc;
-  height:auto;
-  margin-bottom: 0px;
-}
-
-/* Optional: make the footer always visible (fixed to viewport bottom).
-   Use by adding `class="footer footer-fixed"` on the footer element.
-   It is intentionally opt-in so you can revert easily. */
-.footer-fixed {
-  --footer-height: 88px; /* default height, override if you change padding */
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  padding: 1rem 2rem; /* slightly smaller padding for fixed footer */
-  display: flex;
-  align-items: center;
-}
-
-/* Helper class to add bottom padding equal to the footer height so content isn't covered.
-   Add `class="use-fixed-footer"` to the <body> tag when using .footer-fixed. */
-.use-fixed-footer {
-  padding-bottom: var(--footer-height, 88px);
-}
-
-.footer-left,
-.footer-right {
-  flex: 1 1 45%;             /* both sides take ~half width on large screens */
-  box-sizing: border-box;
-}
-
-.map-and-info {
-  display: flex;
-  align-items: flex-start;      /* align text to the top of the map */
-  gap: 2rem;                    /* space between map and text */
-}
-.map-and-info iframe {
-  width: 25%;
-  height: 75%;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-.location-text {
-  font-size: 0.95rem;
-  color: #111;
-  line-height: 1.4;
-}
-
-.location-text h3 {
-  margin: 0 0 0.5rem 0;
-  color: #0b57d0; /* match contact heading */
-  font-size: 1.125rem;
-}
-
-
-.location-text a {
-  color: #0b57d0;
-  text-decoration: none;
-}
-
-.location-text a:hover {
-  text-decoration: underline;
-}
-.location-text a:visited{
-  color:#551a8b;
-}
-
-
-
-/* footer right */
-.footer-right {
-  padding-left: 2rem;
-}
-
-.footer-right h3 {
-  margin-top: 0;
-  color: #0b57d0;            /* match your brand color */
-}
-
-.footer-right a {
-  color: #0b57d0;
-  text-decoration: none;
-}
-
-.footer-right a:hover {
-  text-decoration: underline;
-}
-.footer-right a:visited{
-  color:#551a8b;
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-  }
-  .footer-right {
-    padding-left: 0;
-    margin-top: 1.5rem;
-  }
-  .info-columns { flex-direction: column; gap: 1rem; }
+@media (max-width: 700px){
+  .footer-grid{flex-direction:column;align-items:flex-start}
+  .map-wrap{flex-direction:column}
+  .map-embed{width:100%}
 }

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Preview – Saint Ann Church</title>
+  <style>
+    :root{--chrome:#0b57d0;--bg:#f6f7fb;--border:#e5e7eb}
+    *{box-sizing:border-box}
+    body{margin:0;font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;background:var(--bg)}
+    header{background:var(--chrome);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+    header h1{margin:0;font-size:1rem;font-weight:600}
+    .controls{display:flex;align-items:center;gap:.6rem;margin-left:auto;flex-wrap:wrap}
+    .controls input[type="range"]{width:200px}
+    .controls button{border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;padding:.25rem .5rem;border-radius:.4rem;cursor:pointer}
+    .controls button:hover{background:rgba(255,255,255,.12)}
+    main{padding:1rem 1rem 2rem}
+    .frame-wrap{
+      background:#fff;border:1px solid var(--border);border-radius:.75rem;
+      margin-inline:auto; /* centered */
+      resize:horizontal;overflow:auto; /* draggable edge */
+      min-width:320px;max-width:1400px;width:100%;
+      box-shadow:0 2px 24px rgba(0,0,0,.05);
+    }
+    .frame-title{padding:.5rem .75rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.5rem}
+    .frame-title .url{color:#555;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    iframe{display:block;width:100%;height:80vh;border:0}
+    .hint{color:#555;margin:.75rem auto 0;max-width:900px;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Responsive Preview</h1>
+    <div class="controls">
+      <label>Width: <span id="wLabel">100%</span></label>
+      <input id="widthRange" type="range" min="320" max="1400" value="1000" />
+      <button data-w="375">iPhone</button>
+      <button data-w="414">Large Phone</button>
+      <button data-w="768">Tablet</button>
+      <button data-w="1024">Small Laptop</button>
+      <button data-w="1280">Desktop</button>
+      <button id="fit">Fit</button>
+    </div>
+  </header>
+  <main>
+    <div id="wrap" class="frame-wrap" style="width:100%">
+      <div class="frame-title">
+        <span>Previewing:</span>
+        <span class="url">index.html</span>
+      </div>
+      <iframe src="./index.html" title="Saint Ann Church site preview"></iframe>
+    </div>
+    <p class="hint">Tip: drag the right edge of the white frame to resize, or use the presets/slider above.</p>
+  </main>
+
+  <script>
+    const wrap = document.getElementById('wrap');
+    const range = document.getElementById('widthRange');
+    const wLabel = document.getElementById('wLabel');
+    const fit = document.getElementById('fit');
+    const buttons = document.querySelectorAll('button[data-w]');
+
+    function setWidth(px){
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      const clamped = Math.max(320, Math.min(1400, px));
+      wrap.style.width = clamped + 'px';
+      range.value = clamped;
+      const pct = Math.round((clamped / vw) * 100);
+      wLabel.textContent = (pct >= 95 && pct <= 105) ? '100%' : clamped + 'px';
+    }
+    range.addEventListener('input', e => setWidth(parseInt(e.target.value,10)));
+    buttons.forEach(b => b.addEventListener('click', () => setWidth(parseInt(b.dataset.w,10))));
+    fit.addEventListener('click', () => { wrap.style.width = '100%'; wLabel.textContent = '100%'; });
+
+    // initialize
+    setTimeout(() => {
+      // start fitted to container width
+      wrap.style.width = '100%';
+      wLabel.textContent = '100%';
+    }, 0);
+  </script>
+</body>
+</html>

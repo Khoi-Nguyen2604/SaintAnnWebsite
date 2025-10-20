@@ -3,101 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Saint Ann Catholic Church</title>
-  <meta name="description" content="Saint Ann Roman Catholic Church — accessible, bilingual navigation demo." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Saint Ann Church</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header role="banner">
-    <div class="nav-bar">
-      <div class="nav-inner">
-        <a href="https://churchofsaintann.org" class="logo-link" aria-label="Saint Ann Roman Catholic Church — Home">
-          <img src="Saint Ann Logo-1.png" alt="Saint Ann Roman Catholic Church Logo" class="logo" />
-          <span class="logo-text">Saint Ann Church</span>
-        </a>
-        
-        <nav aria-label="Main navigation">
-          <ul class="nav-list">
-            <li><a href="">News</a></li>
-            <li><a href="">Calendar</a></li>
-            <li><a href="">Get Involved</a></li>
-            <li class="dropdown">
-              <a href="">How do I ...</a>
-              <ul class="dropdown-menu">
-                <li><a href="">Become Catholic</a></li>
-                <li><a href="">Baptize my kid</a></li>
-                <li><a href="">Donate</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="">Kids</a>
-              <ul class="dropdown-menu">
-                <li><a href="">Catholic School</a></li>
-                <li><a href="">Religious Ed</a></li>
-                <li><a href="">CYO Sports</a></li>
-                <li><a href="">VBS</a></li>
-              </ul>
-            </li>
-            <li><a href="">About</a></li>
-          </ul>
-        </nav>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Saint Ann Church home">
+        <img src="./assets/Saint Ann Logo-1.png" class="brand-logo" alt="Saint Ann Parish logo" />
+        <span class="brand-text"><span>Saint Ann</span><span>Church</span></span>
+      </a>
+
+      <!-- Mobile menu toggle (CSS-only) -->
+      <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-label="Toggle navigation" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#news">News</a></li>
+          <li><a href="#calendar">Calendar</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
+          <li class="dropdown">
+            <a href="#how-do-i">How do I ...</a>
+            <ul class="dropdown-menu">
+              <li><a href="#become-catholic">Become Catholic</a></li>
+              <li><a href="#baptism">Baptize my kid</a></li>
+              <li><a href="#donate">Donate</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#kids">Kids</a>
+            <ul class="dropdown-menu">
+              <li><a href="#school">Catholic School</a></li>
+              <li><a href="#religious-ed">Religious Ed</a></li>
+              <li><a href="#cyo">CYO Sports</a></li>
+              <li><a href="#vbs">VBS</a></li>
+            </ul>
+          </li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <main id="main" role="main">
-    <!-- Your page content goes here -->
-    <section id="mass-times">
-      <h1 class="masstime">Mass Times</h1>
-      <ol>
+  <main id="main" class="site-main" role="main">
+    <div class="container">
+      <h1 class="page-title">⛪ Mass Times</h1>
+      <ol class="instructions">
         <li>Enter the mass time here</li>
       </ol>
-    </section>
+    </div>
   </main>
 
-  <footer class="footer footer-fixed">
-    <div class="footer-left">
-      <!-- Google Map Embed -->
-      <div class="map-and-info"> 
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.6756693768543!2d-75.51701862350366!3d40.127230773207735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c691f7850fb56d%3A0xe963c11c5488a1ce!2sSt%20Ann&#39;s%20Catholic%20Church!5e0!3m2!1sen!2sus!4v1760466322854!5m2!1sen!2sus" 
-          width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="location-text">
-          <h3>Saint Ann Parish</h3>
-          <p>
-            <a href="https://maps.app.goo.gl/CssUZL9MgQM8hEjs6" target="_blank">[502 Main St, Phoenixville, PA 19460]<br>
-            Phoenixville, PA</a>
-          </p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <section aria-labelledby="map-title" class="map-wrap">
+        <div class="map-embed">
+          <iframe
+            title="Saint Ann Parish location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Saint+Ann+Parish,+502+Main+St,+Phoenixville,+PA&output=embed">
+          </iframe>
         </div>
-      </div>
-    </div>
+        <address class="church-address">
+          <h2>Saint Ann Parish </h2>
+          <a href="https://maps.app.goo.gl/CssUZL9MgQM8hEjs6" target="_blank">502 Main St<br>
+          Phoenixville, PA</a>
+        </address>
+      </section>
 
-    <div class="footer-right">
-      <h3>Contact Us</h3>
-      <p><strong>Phone:</strong> [Place holder: (555) 123-4567]<br>
-      <strong>Email:</strong> <a href="mailto:info@saintannparish.org">info@saintannparish.org</a></p>
+      <section aria-labelledby="contact-title" class="contact">
+        <h2 id="contact-title">Contact Us</h2>
+        <p><strong>Phone:</strong> <span>(555) 123-4567</span></p>
+        <p><strong>Email:</strong> <a href="mailto:info@saintannparish.org">info@saintannparish.org</a></p>
+      </section>
     </div>
   </footer>
-  <script>
-    // If a footer has .footer-fixed, compute its height and add .use-fixed-footer to body
-    (function(){
-      var footer = document.querySelector('.footer.footer-fixed');
-      if (!footer) return;
-      function update(){
-        var h = Math.ceil(footer.getBoundingClientRect().height);
-        // set CSS var on root and ensure body has padding helper class
-        document.documentElement.style.setProperty('--footer-height', h + 'px');
-        document.body.classList.add('use-fixed-footer');
-      }
-      update();
-      if (window.ResizeObserver) {
-        var ro = new ResizeObserver(update);
-        ro.observe(footer);
-      } else {
-        window.addEventListener('resize', update);
-        window.addEventListener('load', update);
-      }
-    })();
-  </script>
 </body>
 </html>

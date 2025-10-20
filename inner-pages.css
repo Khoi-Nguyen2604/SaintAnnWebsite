@@ -1,0 +1,122 @@
+/* Inner pages layout with sidebar */
+.page-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    padding: 1.5rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.sidebar-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav-list li {
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-nav-list a,
+.sidebar-submenu-toggle {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav-list a:hover,
+.sidebar-submenu-toggle:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+.sidebar-nav-list a.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Submenu styling */
+.sidebar-submenu-toggle {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.sidebar-submenu-toggle::after {
+    content: "▼";
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75em;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-submenu-toggle.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.sidebar-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.sidebar-submenu.active {
+    max-height: 500px; /* Adjust based on content */
+}
+
+.sidebar-submenu a {
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Page content area */
+.page-content {
+    min-height: 500px;
+    padding: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 920px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        position: static;
+        margin-bottom: 1rem;
+    }
+}

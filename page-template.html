@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saint Ann Church - Inner Page</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./inner-pages.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Saint Ann Church home">
+        <img src="./assets/Saint Ann Logo-1.png" class="brand-logo" alt="Saint Ann Parish logo" />
+        <span class="brand-text"><span>Saint Ann</span><span>Church</span></span>
+      </a>
+
+      <!-- Mobile menu toggle (CSS-only) -->
+      <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-label="Toggle navigation" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="news.html">News</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li class="dropdown">
+            <a href="#how-do-i">How do I ...</a>
+            <ul class="dropdown-menu">
+              <li><a href="become-catholic.html">Become Catholic</a></li>
+              <li><a href="baptism.html">Baptize my kid</a></li>
+              <li><a href="donate.html">Donate</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#kids">Kids</a>
+            <ul class="dropdown-menu">
+              <li><a href="school.html">Catholic School</a></li>
+              <li><a href="religious-ed.html">Religious Ed</a></li>
+              <li><a href="cyo.html">CYO Sports</a></li>
+              <li><a href="vbs.html">VBS</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-layout container">
+    <!-- Left Sidebar Navigation -->
+    <aside class="sidebar" role="complementary">
+      <nav class="sidebar-nav" aria-label="Section navigation">
+        <h2 class="sidebar-title">In This Section</h2>
+        <ul class="sidebar-nav-list">
+          <li><a href="#" class="active">Overview</a></li>
+          <li>
+            <button class="sidebar-submenu-toggle">Programs</button>
+            <ul class="sidebar-submenu">
+              <li><a href="#">Program 1</a></li>
+              <li><a href="#">Program 2</a></li>
+              <li><a href="#">Program 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="main" class="page-content" role="main">
+      <h1 class="page-title">Page Title</h1>
+      <!-- Page content goes here -->
+      <p>This is a template for inner pages with a sidebar navigation.</p>
+    </main>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <section aria-labelledby="map-title" class="map-wrap">
+        <h2 id="map-title">Location</h2>
+        <div class="map-embed">
+          <iframe
+            title="Saint Ann Parish location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Saint+Ann+Parish,+502+Main+St,+Phoenixville,+PA&output=embed">
+          </iframe>
+        </div>
+        <address class="church-address">
+          <strong>Saint Ann Parish</strong><br>
+          502 Main St<br>
+          Phoenixville, PA
+        </address>
+      </section>
+
+      <section aria-labelledby="contact-title" class="contact">
+        <h2 id="contact-title">Contact Us</h2>
+        <p><strong>Phone:</strong> <span>(555) 123-4567</span></p>
+        <p><strong>Email:</strong> <a href="mailto:info@saintannparish.org">info@saintannparish.org</a></p>
+      </section>
+    </div>
+  </footer>
+
+  <script>
+    // Handle sidebar submenu toggles
+    document.querySelectorAll('.sidebar-submenu-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const submenu = button.nextElementSibling;
+        submenu.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
