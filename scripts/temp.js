@@ -46,7 +46,7 @@ async function loadRoute(route){
           <section class="container">${html}</section>
         </div>`;
     } else {
-      appEl.innerHTML = html;
+      appEl.innerHTML = `<section class="container">${html}</section>`;
     }
     document.getElementById('nav-toggle').checked = false;
   } catch {

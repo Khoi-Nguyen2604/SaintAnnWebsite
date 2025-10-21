@@ -22,7 +22,7 @@ body{
 }
 
 .container{
-    width: min(1400px, 96vw);
+    width: min(1400px, 95vw);
     margin-inline: auto;
     padding-inline: 1rem;
 }
@@ -125,12 +125,254 @@ body{
   border-radius:0.25rem;
 }
 
+/* Image Slider */
+.image-slider {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: var(--accent);
+    padding: 1rem 0;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 122px; /* matches header height (100px logo + 10px margin-top + 12px total padding) */
+    display: flex;
+    align-items: center;
+}
+
+.slider-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.slider-arrow svg {
+    width: 18px;
+    height: 18px;
+    color: var(--primary);
+}
+
+.slider-arrow.prev {
+    left: 20px;
+}
+
+.slider-arrow.next {
+    right: 20px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        height: 100px;
+    }
+    
+    .slider-arrow {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .slider-arrow svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
 /* Main */
 .site-main {
     flex: 1;
-    padding: 1.25rem 0 2rem;
+    padding: 0 0 2rem;
     overflow-y: auto; /* Enable vertical scrolling */
     min-height: 0; /* Required for flex child to scroll */
+}
+
+/* Main Layout with Sticky Calendar */
+.main-layout {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0; /* Prevents content from overflowing */
+}
+
+/* Sticky Calendar Sidebar */
+.calendar-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    margin-top: 1rem;
+}
+
+.calendar-wrapper {
+    position: sticky;
+    top: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.calendar-wrapper h2 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin: 0 0 0.75rem 0;
+    text-align: center;
+}
+
+.google-calendar-placeholder {
+    width: 100%;
+    background: var(--bg);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+/* Responsive Calendar */
+@media (max-width: 1024px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .calendar-sidebar {
+        width: 100%;
+    }
+    
+    .calendar-wrapper {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Main Layout with Sticky Calendar */
+.main-layout {
+    display: flex;
+    gap: 2rem;
+    width: min(1400px, 95vw);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0; /* Prevents content from overflowing */
+}
+
+/* Sticky Calendar Sidebar */
+.calendar-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.calendar-wrapper {
+    position: sticky;
+    top: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.calendar-wrapper h2 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin: 0 0 0.75rem 0;
+    text-align: center;
+}
+
+.google-calendar-placeholder {
+    width: 100%;
+    background: var(--bg);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+/* Responsive Calendar */
+@media (max-width: 1024px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .calendar-sidebar {
+        width: 100%;
+    }
+    
+    .calendar-wrapper {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
 }
 .page-title {
     font-size: 2rem;
@@ -151,8 +393,56 @@ body{
     line-height: 1.6;
 }
 
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.schedule-item {
+    text-align: center;
+}
+
+.schedule-item h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-item li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.schedule-item p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.schedule-item em {
+    font-style: italic;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 /* Footer (left: map+address; right: contact) */
-.site-footer{background:var(--accent);border-top:1px solid var(--border);padding:1.2rem 0}
+.site-footer{background:var(--accent);border-top:1px solid var(--border);padding:0}
 .footer-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem}
 .map-wrap{display:flex;align-items:flex-start;gap:1rem;flex:1 1 55%;min-width:320px}
 .map-embed{width:200px;height:150px;border:1px solid var(--border);border-radius:.5rem;overflow:hidden;flex-shrink:0;background:#fff}
