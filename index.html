@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Saint Ann Church</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   <link rel="stylesheet" href="./styles/styles.css" />
 </head>
 <body>
@@ -50,10 +51,9 @@
     </div>
   </header>
 
-  <main id="main" class="site-main" role="main">
-    <div class="main-layout">
-      <div class="main-content">
-        <section class="image-slider" aria-label="Image Carousel">
+    <main id="main" class="site-main" role="main">
+    <!-- Image Slider -->
+    <section class="image-slider" aria-label="Image Carousel">
       <div class="slider-container">
         <button class="slider-arrow prev" aria-label="Previous image">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -85,21 +85,45 @@
       </div>
     </section>
 
-        <div class="main-layout container">
+    <!-- Two Column Layout -->
+    <div class="main-layout container">
+      <!-- Mass Times -->
       <div class="main-content">
         <section aria-labelledby="mass-times-title" class="mass-times">
           <h1 class="page-title">⛪ Mass Times</h1>
           <div class="content-wrap">
             <ul>
-            <li>Monday—Friday: 8:45 am</li>
-            <li>Wednesday: 6:30 pm</li>
-            <li>Saturday: 5:00 pm</li>
-            <li>Sunday: 8:30 am & 11:00 am</li>
-            <li>Holy Days: 7:00 pm</li>
-          </ul>
+              <li>Monday—Friday: 8:45 am</li>
+              <li>Wednesday: 6:30 pm</li>
+              <li>Saturday: 5:00 pm</li>
+              <li>Sunday: 8:30 am & 11:00 am</li>
+              <li>Holy Days: 7:00 pm</li>
+            </ul>
+          </div>
+        </section>
+        <section aria-labelledby="mass-times-title" class="mass-times">
+          <h1 class="page-title">🕇 Confession (Placeholder example)</h1>
+          <div class="content-wrap">
+            <ul>
+              <li>Monday: 9:15-10:00 am</li>
+              <li>Tuesday: 8:00-8:45 am</li>
+              <li>Wednesday: 5:30-6:15 pm</li>
+              <li>Saturday: 4:00-4:45 pm</li>
+              <li>Weekdays: by appointment</li>
+            </ul>
+          </div>
+        </section>
+        <section aria-labelledby="mass-times-title" class="mass-times">
+          <h1 class="page-title">🕯️ Chapel</h1>
+          <div class="content-wrap">
+            <ul>
+              <li>8:30 am—4:00pm (<em>open to the public for private prayer</em>)</li>
+            </ul>
           </div>
         </section>
       </div>
+      
+      <!-- Calendar Sidebar -->
       <aside class="calendar-sidebar">
         <div class="calendar-wrapper">
           <h2>Parish upcoming events</h2>
@@ -121,25 +145,9 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <div class="schedule-grid">
-        <div class="schedule-item">
-          <h2>Confession (Placeholder example)</h2>
-          <ul>
-            <li>Monday: 9:15-10:00 am</li>
-            <li>Tuesday: 8:00-8:45 am</li>
-            <li>Wednesday: 5:30-6:15 pm</li>
-            <li>Saturday: 4:00-4:45 pm</li>
-            <li>Weekdays: by appointment</li>
-          </ul>
-        </div>
-        <div class="schedule-item">
-          <h2>Chapel</h2>
-          <p>8:30 am—4:00pm</p>
-          <p><em>open to the public for private prayer</em></p>
-        </div>
-      </div>
+      <!-- This is where the bulletins will be dynamically inserted -->
     </div>
-    <div class="container footer-grid">
+    <div class="footer-grid">
       <section aria-labelledby="map-title" class="map-wrap">
         <div class="map-embed">
           <iframe
@@ -155,7 +163,14 @@
           Phoenixville, PA</a>
         </address>
       </section>
-
+      <section aria-labelledby="hours-title" class="office-hours">
+        <h2 id="hours-title">Office Hours</h2>
+        <ul>
+          <li>Monday—Friday: 9:00 am—4:00 pm</li>
+          <li>Saturday: Closed</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </section>
       <section aria-labelledby="contact-title" class="contact">
         <h2 id="contact-title">Contact Us</h2>
         <p><strong>Phone:</strong> <a href="tel:+1555123456789"><span>(555) 123-4567</span></a></p>
@@ -163,7 +178,9 @@
       </section>
     </div>
   </footer>
-  <script src="./scripts/temp.js"></script>
+  <script src="./scripts/pdfjs/pdf.min.js"></script>
+  <script src="./scripts/route.js"></script>
   <script src="./scripts/slider.js"></script>
+  <script src="./scripts/bulletins.js"></script>
 </body>
 </html>
