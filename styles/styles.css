@@ -269,54 +269,6 @@ body{
     min-width: 0; /* Prevents content from overflowing */
 }
 
-/* Sticky Calendar Sidebar */
-.calendar-sidebar {
-    width: 300px;
-    flex-shrink: 0;
-    margin-top: 1rem;
-}
-
-.calendar-wrapper {
-    position: sticky;
-    top: 1rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.calendar-wrapper h2 {
-    color: var(--primary);
-    font-size: 1.2rem;
-    margin: 0 0 0.75rem 0;
-    text-align: center;
-}
-
-.google-calendar-placeholder {
-    width: 100%;
-    background: var(--bg);
-    border-radius: 0.25rem;
-    overflow: hidden;
-}
-
-/* Responsive Calendar */
-@media (max-width: 1024px) {
-    .main-layout {
-        flex-direction: column;
-    }
-    
-    .calendar-sidebar {
-        width: 100%;
-    }
-    
-    .calendar-wrapper {
-        position: relative;
-        top: 0;
-        margin-bottom: 2rem;
-    }
-}
-
 /* Main Layout with Sticky Calendar */
 .main-layout {
     display: flex;
@@ -327,14 +279,9 @@ body{
     padding: 0;
 }
 
-.main-content {
-    flex: 1;
-    min-width: 0; /* Prevents content from overflowing */
-}
-
 /* Sticky Calendar Sidebar */
 .calendar-sidebar {
-    width: 300px;
+    width: 380px;
     flex-shrink: 0;
 }
 
@@ -344,8 +291,9 @@ body{
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: visible;
 }
 
 .calendar-wrapper h2 {
@@ -359,7 +307,13 @@ body{
     width: 100%;
     background: var(--bg);
     border-radius: 0.25rem;
-    overflow: hidden;
+    overflow: visible;
+}
+
+.google-calendar-placeholder iframe {
+    width: 100%;
+    min-width: 320px;
+    display: block;
 }
 
 /* Responsive Calendar */
